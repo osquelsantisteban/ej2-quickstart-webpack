@@ -5,20 +5,19 @@ const path = require('path');
 module.exports = {
     entry: ['./src/app/app.ts', './src/styles/styles.css'],
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.ts?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
             {
                 test: /\.css$/,
-                use: [ MiniCssExtractPlugin.loader, "css-loader" ]
+                use: [MiniCssExtractPlugin.loader, "css-loader"]
             },
         ],
     },
     resolve: {
-        extensions: ['.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js', '.css'],
     },
     output: {
         filename: 'bundle.js',
